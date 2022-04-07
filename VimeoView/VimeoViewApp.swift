@@ -11,7 +11,7 @@ import SwiftUI
 struct VimeoViewApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

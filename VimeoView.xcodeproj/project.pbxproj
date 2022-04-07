@@ -10,6 +10,7 @@
 		E3595E5B27FF35ED00491335 /* VimeoViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3595E5A27FF35ED00491335 /* VimeoViewApp.swift */; };
 		E3595E5F27FF35EF00491335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3595E5E27FF35EF00491335 /* Assets.xcassets */; };
 		E3595E6227FF35EF00491335 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3595E6127FF35EF00491335 /* Preview Assets.xcassets */; };
+		E3991F6527FF3A4E00E2DB2F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3991F6427FF3A4E00E2DB2F /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		E3595E5A27FF35ED00491335 /* VimeoViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoViewApp.swift; sourceTree = "<group>"; };
 		E3595E5E27FF35EF00491335 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3595E6127FF35EF00491335 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E3991F6427FF3A4E00E2DB2F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		E3991F6227FF3A1500E2DB2F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E3991F6427FF3A4E00E2DB2F /* MainView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3595E5B27FF35ED00491335 /* VimeoViewApp.swift in Sources */,
+				E3991F6527FF3A4E00E2DB2F /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
