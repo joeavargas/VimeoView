@@ -10,6 +10,8 @@ import SwiftUI
 struct WatchView: View {
     var body: some View {
         VStack {
+            
+            // MARK: - My Feed
             HStack {
                 Text("My Feed")
                     .font(.system(size: 20))
@@ -44,6 +46,23 @@ struct WatchView: View {
                 .stroke(Color(UIColor.lightGray), lineWidth: 0.7)
             )
             .padding(.horizontal)
+            
+            // MARK: - Staff picks
+            HStack {
+                Text("Staff Picks")
+                    .font(.system(size: 20))
+                    .fontWeight(.bold)
+                Spacer()
+                Button("View All"){
+                    print("View All button pushed")
+                }
+                Image(systemName: "chevron.right")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 5, height: 5)
+                    .foregroundColor(.blue)
+            }
+            .padding()
         }
     }
 }
