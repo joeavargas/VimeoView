@@ -56,6 +56,7 @@ struct WatchView: View {
                 Button("View All"){
                     print("View All button pushed")
                 }
+                .foregroundColor(.blue)
                 Image(systemName: "chevron.right")
                     .resizable()
                     .scaledToFill()
@@ -63,6 +64,9 @@ struct WatchView: View {
                     .foregroundColor(.blue)
             }
             .padding()
+            
+            
+            
         }
     }
 }
