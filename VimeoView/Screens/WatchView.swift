@@ -42,8 +42,8 @@ struct WatchView: View {
             }
             .frame(width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height / 2.8)
             .overlay(
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Color(UIColor.lightGray), lineWidth: 0.7)
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color(UIColor.lightGray), lineWidth: 0.7)
             )
             .padding(.horizontal)
             
@@ -66,37 +66,44 @@ struct WatchView: View {
             .padding()
             
             // MARK: - Vertical scrollview
-            VStack {
-                Image("video-image")
-                    .resizable()
-                    .scaledToFill()
-                    .aspectRatio(contentMode: .fit)
-                
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    VStack(alignment: .leading) {
-                        Text("Zouj - Delete After Death")
-                            .fontWeight(.bold)
-                        HStack {
-                            Text("Laura Jayne")
-                            Spacer()
-                            Image(systemName: "ellipsis")
-                                .foregroundColor(.secondary)
+                    ForEach(1..<10){ _ in
+                        VStack {
+                            Image("video-image")
+                                .resizable()
+                                .scaledToFill()
+                                .aspectRatio(contentMode: .fit)
+                            
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text("Zouj - Delete After Death")
+                                        .fontWeight(.bold)
+                                    HStack {
+                                        Text("Laura Jayne")
+                                        Spacer()
+                                        Image(systemName: "ellipsis")
+                                            .foregroundColor(.secondary)
+                                    }
+                                    Text("3.5k view - 1 week ago")
+                                        .foregroundColor(Color(UIColor.lightGray))
+                                }
+                                .layoutPriority(100)
+                                Spacer()
+                            }
+                            .padding()
                         }
-                        Text("3.5k view - 1 week ago")
-                            .foregroundColor(Color(UIColor.lightGray))
+                        .frame(width: UIScreen.main.bounds.width / 1.5, height: UIScreen.main.bounds.height / 3.5)
+                        .cornerRadius(10)
+                        .overlay (
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(UIColor.lightGray), lineWidth: 0.5)
+                        )
+                        .padding([.top, .horizontal], 2)
                     }
-                    .layoutPriority(100)
-                    Spacer()
                 }
                 .padding()
             }
-            .frame(width: UIScreen.main.bounds.width / 1.5, height: UIScreen.main.bounds.height / 3.5)
-            .cornerRadius(10)
-            .overlay (
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color(UIColor.lightGray), lineWidth: 0.5)
-            )
-            .padding([.top, .horizontal])
         }
     }
 }
