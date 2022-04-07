@@ -9,33 +9,60 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        TabView {
-            Text("HomeView")
-                .tabItem{
-                    Label("Home", systemImage: "house")
+        NavigationView {
+            TabView {
+                Text("HomeView")
+                    .tabItem{
+                        Label("Home", systemImage: "house")
+                    }
+                
+                Text("VideosView")
+                    .tabItem{
+                        Label("Videos", systemImage: "film")
+                    }
+                
+                Text("AddVideosView")
+                    .tabItem{
+                        Label("", systemImage: "plus")
+                    }
+                
+                Text("AnalyticsView")
+                    .tabItem{
+                        Label("Analytics", systemImage: "chart.bar")
+                    }
+                
+                Text("WatchView")
+                    .tabItem {
+                        Label("Watch", systemImage: "play.tv")
+                    }
+            }
+            .accentColor(.black)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        print("to NotificationsView")
+                    }) {
+                        Label("", systemImage: "bell")
+                    }
                 }
-            
-            Text("VideosView")
-                .tabItem{
-                    Label("Videos", systemImage: "film")
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack(spacing: 10) {
+                        Button(action: {
+                            print("to SearchView")
+                        }) {
+                            Label("", systemImage: "magnifyingglass")
+                        }
+                        
+                        Button(action: {
+                            print("present ProfileView")
+                        }) {
+                            Label("Profile", systemImage: "person.circle")
+                        }
+                    }
                 }
-            
-            Text("AddVideosView")
-                .tabItem{
-                    Label("", systemImage: "plus")
-                }
-            
-            Text("AnalyticsView")
-                .tabItem{
-                    Label("Analytics", systemImage: "chart.bar")
-                }
-            
-            Text("WatchView")
-                .tabItem {
-                    Label("Watch", systemImage: "play.tv")
-                }
+            }
         }
-        .accentColor(.black)
+        
     }
 }
 
