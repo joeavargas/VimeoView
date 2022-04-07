@@ -55,7 +55,7 @@ struct WatchView: View {
                         .fontWeight(.bold)
                     Spacer()
                     Button("View All"){
-                        print("View All button pushed")
+                        print("View All button pressed")
                     }
                     .foregroundColor(.blue)
                     Image(systemName: "chevron.right")
@@ -70,37 +70,7 @@ struct WatchView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(1..<10){ _ in
-                            VStack {
-                                Image("video-image")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .aspectRatio(contentMode: .fit)
-                                
-                                HStack {
-                                    VStack(alignment: .leading) {
-                                        Text("Zouj - Delete After Death")
-                                            .fontWeight(.bold)
-                                        HStack {
-                                            Text("Laura Jayne")
-                                            Spacer()
-                                            Image(systemName: "ellipsis")
-                                                .foregroundColor(.secondary)
-                                        }
-                                        Text("3.5k view - 1 week ago")
-                                            .foregroundColor(Color(UIColor.lightGray))
-                                    }
-                                    .layoutPriority(100)
-                                    Spacer()
-                                }
-                                .padding()
-                            }
-                            .frame(width: UIScreen.main.bounds.width / 1.5, height: UIScreen.main.bounds.height / 3.5)
-                            .cornerRadius(10)
-                            .overlay (
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color(UIColor.lightGray), lineWidth: 0.5)
-                            )
-                            .padding([.top, .horizontal], 2)
+                            VideoCardView(imageName: "video-image", videoTitle: "Video Title Here", viewCount: 3500, creatorName: "Jane Doe", postedDate: "1 week ago")
                         }
                     }
                     .padding()

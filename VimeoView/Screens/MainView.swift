@@ -33,9 +33,13 @@ struct MainView: View {
                     .tag(1)
                 
                 Text("AddVideosView")
-                    .tabItem{
-                        Label("", systemImage: "plus")
+                    .onTapGesture {
+                        selectedIndex = 2
                     }
+                    .tabItem{
+                        Label("Add Video", systemImage: "plus")
+                    }
+                    .tag(2)
                 
                 Text("AnalyticsView")
                     .onTapGesture {
@@ -44,7 +48,7 @@ struct MainView: View {
                     .tabItem{
                         Label("Analytics", systemImage: "chart.bar")
                     }
-                    .tag(2)
+                    .tag(3)
                 
                 WatchView()
                     .onTapGesture {
@@ -53,7 +57,7 @@ struct MainView: View {
                     .tabItem {
                         Label("Watch", systemImage: "play.tv")
                     }
-                    .tag(3)
+                    .tag(4)
             }
             .navigationBarTitle(tabTitle)
             .accentColor(.black)
@@ -89,8 +93,9 @@ struct MainView: View {
         switch selectedIndex {
         case 0: return "Home"
         case 1: return "Videos"
-        case 2: return "Analytics"
-        case 3: return "Watch"
+        case 2: return "Add Video"
+        case 3: return "Analytics"
+        case 4: return "Watch"
         default: return ""
             
         }
@@ -100,5 +105,7 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+        MainView()
+            .previewDevice("iPhone 8 Plus")
     }
 }
