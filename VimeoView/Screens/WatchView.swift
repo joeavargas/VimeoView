@@ -65,8 +65,38 @@ struct WatchView: View {
             }
             .padding()
             
-            
-            
+            // MARK: - Vertical scrollview
+            VStack {
+                Image("video-image")
+                    .resizable()
+                    .scaledToFill()
+                    .aspectRatio(contentMode: .fit)
+                
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Zouj - Delete After Death")
+                            .fontWeight(.bold)
+                        HStack {
+                            Text("Laura Jayne")
+                            Spacer()
+                            Image(systemName: "ellipsis")
+                                .foregroundColor(.secondary)
+                        }
+                        Text("3.5k view - 1 week ago")
+                            .foregroundColor(Color(UIColor.lightGray))
+                    }
+                    .layoutPriority(100)
+                    Spacer()
+                }
+                .padding()
+            }
+            .frame(width: UIScreen.main.bounds.width / 1.5, height: UIScreen.main.bounds.height / 3.5)
+            .cornerRadius(10)
+            .overlay (
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color(UIColor.lightGray), lineWidth: 0.5)
+            )
+            .padding([.top, .horizontal])
         }
     }
 }
