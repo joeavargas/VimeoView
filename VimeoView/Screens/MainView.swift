@@ -46,7 +46,7 @@ struct MainView: View {
                     }
                     .tag(2)
                 
-                Text("WatchView")
+                WatchView()
                     .onTapGesture {
                         selectedIndex = 4
                     }
