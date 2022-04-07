@@ -8,18 +8,29 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @State private var selectedIndex = 0
+    
     var body: some View {
         NavigationView {
-            TabView {
+            TabView(selection: $selectedIndex) {
                 Text("HomeView")
+                    .onTapGesture {
+                        selectedIndex = 0
+                    }
                     .tabItem{
                         Label("Home", systemImage: "house")
                     }
+                    .tag(0)
                 
                 Text("VideosView")
+                    .onTapGesture {
+                        selectedIndex = 1
+                    }
                     .tabItem{
                         Label("Videos", systemImage: "film")
                     }
+                    .tag(1)
                 
                 Text("AddVideosView")
                     .tabItem{
@@ -27,15 +38,24 @@ struct MainView: View {
                     }
                 
                 Text("AnalyticsView")
+                    .onTapGesture {
+                        selectedIndex = 3
+                    }
                     .tabItem{
                         Label("Analytics", systemImage: "chart.bar")
                     }
+                    .tag(2)
                 
                 Text("WatchView")
+                    .onTapGesture {
+                        selectedIndex = 4
+                    }
                     .tabItem {
                         Label("Watch", systemImage: "play.tv")
                     }
+                    .tag(3)
             }
+            .navigationBarTitle(tabTitle)
             .accentColor(.black)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -63,6 +83,17 @@ struct MainView: View {
             }
         }
         
+    }
+    
+    var tabTitle: String {
+        switch selectedIndex {
+        case 0: return "Home"
+        case 1: return "Videos"
+        case 2: return "Analytics"
+        case 3: return "Watch"
+        default: return ""
+            
+        }
     }
 }
 
